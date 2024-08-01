@@ -1,0 +1,47 @@
+name: Rust
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup toolchain
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: stable
+          targets: wasm32-unknown-unknown
+          components: rust-src
+      - uses: jetli/wasm-pack-action@v0.4.0
+        with:
+          version: 'latest'
+      - name: Cargo fmt & clippy
+        run: |
+          cargo fmt --all -- --check
+          cargo clippy -- -D warnings
+      - name: Tests
+        run: |
+          cd crates/yew-app
+          cargo test
+      - name: Run web tests
+        run: |
+          cd crates/yew-app
+          wasm-pack test --headless --chrome
+      - name: Build app
+        run: |
+          cd crates/yew-app
+          trunk build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
+        with:
+          branch: main
+          folder: crates/yew-app/dist
+          clean: true
+          
