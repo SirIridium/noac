@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        
+<script type="module" nonce="jXCtzKUiXJ/a0YqgQJuTiQ==">
+import init, * as bindings from '/noac-fee5c09a8458ced6.js';
+const wasm = await init('/noac-fee5c09a8458ced6_bg.wasm');
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+        <title>Hello, world!</title>
+    
+<link rel="modulepreload" href="/noac-fee5c09a8458ced6.js" crossorigin=anonymous integrity="sha384-+VRFb+vAsgN4dssB+LY58ZUIAcb8Oip8Bx/5B+fDqVPk/wBjr409ppSBbwKCaRbj">
+<link rel="preload" href="/noac-fee5c09a8458ced6_bg.wasm" crossorigin=anonymous integrity="sha384-9hGqvYWxBJe5TDcUDqFfS8RIJ5N3Rug54eDHK+d8PThmpqgCEdi9geWL7nUJzVLi" as="fetch" type="application/wasm"></head>
+</html>
