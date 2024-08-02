@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        
-<script type="module" nonce="bpgTNV517shV37R0wayHKA==">
-import init, * as bindings from '/noac-5e130dc371e8ad24.js';
-const wasm = await init('/noac-5e130dc371e8ad24_bg.wasm');
+
+<head>
+<link rel="modulepreload" href="/noac-a7a6ea5d501e749a.js" crossorigin=anonymous integrity="sha384-tnaJqHdnuTu3fBMPl4ObjMdOwbcgDlLiqXOhw32VnVyi2PfeMCKCWyzkelKaJugA">
+<link rel="preload" href="/noac-a7a6ea5d501e749a_bg.wasm" crossorigin=anonymous integrity="sha384-i7F500qMPgg5Kjp/3jzcCSLSX2Snlbz4xrZMCNj4ByC95hUqkX6/QpjkTIIY6K29" as="fetch" type="application/wasm"></head>
+
+<body>
+<script type="module" nonce="CNy53Rdj5knoMo7GEVAndQ==">
+import init, * as bindings from '/noac-a7a6ea5d501e749a.js';
+const wasm = await init('/noac-a7a6ea5d501e749a_bg.wasm');
 
 
 window.wasmBindings = bindings;
@@ -13,9 +16,6 @@ window.wasmBindings = bindings;
 
 dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 
-</script>
-        <header>Hello, world!</header>
-    
-<link rel="modulepreload" href="/noac-5e130dc371e8ad24.js" crossorigin=anonymous integrity="sha384-+VRFb+vAsgN4dssB+LY58ZUIAcb8Oip8Bx/5B+fDqVPk/wBjr409ppSBbwKCaRbj">
-<link rel="preload" href="/noac-5e130dc371e8ad24_bg.wasm" crossorigin=anonymous integrity="sha384-jkg1AIi1UQS55u72eDJxdXUyEceYdOmI0qnGj/LEsKvCkRyJd0jCEextsgvKVjMA" as="fetch" type="application/wasm"></head>
+</script></body>
+
 </html>
