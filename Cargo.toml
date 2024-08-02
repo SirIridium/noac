@@ -4,7 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-yew = "0.18.0"
+console_error_panic_hook = "0.1.7"
+leptos = { version = "0.6.13", features = ["csr"] }
+wasm-logger = "0.2.0"
 
 [dev-dependencies]
 wasm-bindgen-test = "0.2"

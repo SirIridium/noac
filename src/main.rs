@@ -1,32 +1,14 @@
-use yew::prelude::*;
+use leptos::*;
 
-struct Index;
-
-impl Component for Index {
-    type Message = ();
-    type Properties = ();
-
-    fn create(_: Self::Properties, _: ComponentLink<Self>) -> Self {
-        Self
-    }
-
-    fn update(&mut self, _: Self::Message) -> ShouldRender {
-        false
-    }
-
-    fn change(&mut self, _: Self::Properties) -> ShouldRender {
-        false
-    }
-
-    fn view(&self) -> Html {
-        html! {
-            <div>
-                { "Hello, World!" }
-            </div>
-        }
+#[component]
+fn App() -> impl IntoView {
+    view! {
+        <div class="header">
+            <h1>"LodgeMaster Social Page"</h1>
+        </div>
     }
 }
 
 fn main() {
-    yew::start_app::<Index>();
+    mount_to_body(|| view! { <App/> })
 }
